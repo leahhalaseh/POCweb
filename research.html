@@ -130,7 +130,7 @@
 
                     		<h3>Web Tiles</h3>
                     		<p><a href="http://developer.microsoftband.com/WebTile">Link to official page</a></p>
-                    		<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health app. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
+                    		<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health. Web tiles supports RSS and ATOM feeds. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
                     		<p>We can use this to send alerts from the Head Office to lone workers, by integrating it to an online dashboard where only the Head Office has access. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers.</p>
                     	</div>
 
@@ -181,49 +181,25 @@
                     </div><!--/!row-->
 
                     <div class="row">
-                    	<h2>Platforms/Components</h2>
+                    	<h2>Platforms and Tools</h2>
                     	<p>The Microsoft Band supports Windows, Android, and iOS mobile platforms.</p>
-                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. We have also discovered third-party(?) Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, howeveer we have yet to be able to get these third-party SDKs to work.</p>
+                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point. We have also discovered third-party(?) Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, however we have yet to be able to get these third-party SDKs to work.</p>
+                    	<p>Our app needs to be built for mobile devices (as opposed to tablets or PCs) as we need the app on a device that the Lone Worker will be able to carry with them (along with the Band) all the time while working.</p>
 
                     	<h3>iOS (Objective-C)</h3>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    	<p>Microsoft Band SDK supports iOS as an official platform. The Band SDK for iOS and its features is implemented natively on Objective-C. Native iOS development requires the use of <a href="https://developer.apple.com/xcode/">Xcode</a>, only available on Mac OS machines. This is a major problem as we do not have the adequate resources to develop on iOS as a group, as we only have access to one Mac OS PC and one iOS mobile device for testing. If we are to develop the app for iOS, we will only be able to work one at a time. A Mac OS PC is still required to build iOS apps even if we choose to develop the app on a non-native platform using Xamarin or Cordova/PhoneGap (see below). iOS was originally our client's first choice of platform as a majority of their Lone Workers use iOS mobile devices, however it is infeasible for us to build the app on iOS due to our resource constrains.</p>
 
                     	<h3>Android (Java)</h3>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    	<p>Microsoft Band SDK supports Android as an official platform. The Band SDK for Android and its features is implemented natively on Android's version of Java. Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. We have managed to build, run, and understand the sample Band SDK apps for Android, including functionalities such as recieving heart rate sensor readings, creating tiles on the Band, sending messages, and creating a tile on the Band with a button that the phone can detect when the button on the Band is pressed. Android is the most widely used mobile OS among the general public, however we do not know for sure how popular Android devices are amongst Lone Workers, and will need to consult with our client further.</p>
 
                     	<h3>Windows (C#)</h3>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    	<p>Microsoft Band SDK supports Windows as an official platform. The Band SDK for Windows devices is implemented natively on C#. Since Windows 10, Windows Store apps for Windows mobile devices (previously Windows Phone), tablets, and PCs have been merged into one Universal Windows Platform (UWP). Our app, should we decide to develop for Windows, will still be targeted for mobile devices (UI and functionality wise). Windows apps are typically built using Visual Studio, which is available for free for students, and contains a Windows mobile simulator. Also, we will be able to borrow a Windows mobile device from UCL. However, Windows mobile devices are not as widely used as iOS or Android devices, and we assume not many Lone Workers will be able to benefit from a Windows mobile app.</p>
 
                     	<h3>Xamarin (C#)</h3>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    	<p>Xamarin is a cross-platform mobile development tool used to make apps that works simultaneously on iOS and Android with C#. Xamarin apps are structured with an iOS/Android layer that contains the UI and app layers (but still written on C#) and a Core Library layer that contains shared code such as business and data layers. Xamarin allows developers to add components to their apps, and they have a <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Microsoft Band SDK</a> component that which we can potentially use, though we have not tested this yet. While their main products require a <a href="https://store.xamarin.com/">montly or annual payment</a>, they also have a <a href="https://xamarin.com/starter">Starter edition</a> that we can use for free, and should be enough to build our PoC. Xamarin apps can be built with an add-on to Visual Studio or their own Xamarin Studio. However, their Android and iOS development tools require access to Android SDK for Android and Xcode for iOS, and it is impossible to work on the iOS components on non-Mac PCs (<a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Their tutorial</a> claims that it is possible to work on the iOS components on a Windows PC connected to a Mac OS X PC through SSH, though we have not tried it yet). Also, our first try at using the Xamarin Studio (Starter edition) to run their sample app on Android was not successful.</p>
 
                     	<h3>Cordova/PhoneGap (HTML/CSS/JS)</h3>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    	<p><a href="https://cordova.apache.org/">Cordova</a> is a tool that allows developers to build mobile apps with HTML, CSS, and JavaScript, targetting multiple platforms with one code base. <a href="http://phonegap.com/">PhoneGap</a> is a distribution of Cordova that adds additional tools. There is no official SDK for Microsoft Band built on Cordova or PhoneGap, but we have found two third-party repositories that claims to have implemented the Microsoft Band SDK for Cordova/PhoneGap, one using <a href="https://github.com/dkundel/band-cordova">Cordova</a> and one using <a href="https://github.com/purplecabbage/phonegap-plugin-msband">PhoneGap</a>. However, our attempts at getting either third-party SDK to build were unsuccessful.</p>
                     </div><!--/!row-->
                     
                     <div class="row">
@@ -240,7 +216,7 @@
                                 <li> <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">Band SDK documentation</a> </li>
                                 <li> <a href="http://www.microsoft.com/microsoft-band/en-gb/developer">Band SDK documentation</a> </li>
                                 <li> <a href="https://developer.microsoftband.com/WebTile">Web Tiles</a> </li>
-                                <li> <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">Web Tiles documentaion </a> </li>
+                                <li> <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">Web Tiles documentation</a> </li>
                                 <li> <a href="https://developer.microsoftband.com/WebTilehttp://blogs.msdn.com/b/visualstudio/archive/2015/07/15/microsoft-band-and-health-developer-platform.aspx"> Microsoft blog post about the Band and developers</a> </li>
                                 <li> <a href="https://www.microsoft.com/microsoft-band/en-gb"> Microsoft Band main page (features etc)</a> </li>
                             </ul>
@@ -266,9 +242,10 @@
                     	<div class="col-xs-12 col-md-6">           
                             <h2>Xamarin:</h2>
                             <ul class="center list-fix-align">
-                                 <li> <a href="https://xamarin.com/starter "> Xamarin Starter (Free)</a> </li>
+                                 <li> <a href="https://xamarin.com/starter"> Xamarin Starter (Free)</a> </li>
                                  <li> <a href="https://xamarin.com/getting-started/ios"> Getting started (iOS)</a> </li>
-                                 <li> <a href="http://developer.xamarin.com/  ">  Guides, Recipes, Samples, API/Documentation</a> </li>
+                                 <li> <a href="https://xamarin.com/getting-started/android"> Getting started (Android) </a> </li>
+                                 <li> <a href="http://developer.xamarin.com/">  Guides, Recipes, Samples, API/Documentation</a> </li>
                                  <li> <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk ">Band SDK for Xamarin</a> </li>
                                  <li> <a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Installation Guide </a> </li>
                              </ul>
@@ -280,8 +257,8 @@
                                 <li> <a href="https://cordova.apache.org/">Cordova</a> </li>
                                 <li> <a href="http://phonegap.com/">PhoneGap</a> </li> 
                                 <li> <a href="https://build.phonegap.com/">PhoneGap Build</a> </li>
-                                <li> <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">Band SDK for PhoneGap</a> </li>
-                                <li> <a href="https://github.com/purplecabbage/phonegap-plugin-msband">Band SDK for PhoneGap (repo)</a> </li>
+                                <li> <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">Band SDK for PhoneGap (slides)</a> </li>
+                                <li> <a href="https://github.com/purplecabbage/phonegap-plugin-msband">Band SDK for PhoneGap (repository)</a> </li>
                                 <li> <a href="https://github.com/dkundel/band-cordova">Band SDK for Cordova</a> </li>
                             </ul>
                         </div>
