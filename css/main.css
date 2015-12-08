@@ -2737,3 +2737,13 @@ span.stButton_gradient,
 .list-fix-align {
 	padding-right: 3pc;
 }
+
+.larger {
+  font-size: 125%;
+}
+
+.vcenter {
+  display: table-cell;
+    vertical-align: middle;
+    padding: 4pc;
+}
