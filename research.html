@@ -182,13 +182,19 @@
                     	<p>Our app needs to be built for mobile devices (as opposed to tablets or PCs) as we need the app on a device that the Lone Worker will be able to carry with them (along with the Band) all the time while working.</p>
 
                     	<h3>iOS (Objective-C)</h3>
-                    	<p>Microsoft Band SDK supports iOS as an official platform. The Band SDK for iOS and its features is implemented natively on Objective-C. Native iOS development requires the use of <a href="https://developer.apple.com/xcode/">Xcode</a>, only available on Mac OS machines. This is a major problem as we do not have the adequate resources to develop on iOS as a group, as we only have access to one Mac OS PC and one iOS mobile device for testing. If we are to develop the app for iOS, we will only be able to work one at a time. A Mac OS PC is still required to build iOS apps even if we choose to develop the app on a non-native platform using Xamarin or Cordova/PhoneGap (see below). iOS was originally our client's first choice of platform as a majority of their Lone Workers use iOS mobile devices, however it is infeasible for us to build the app on iOS due to our resource constrains.</p>
+                    	<p>Microsoft Band SDK supports iOS as an official platform. The Band SDK for iOS and its features is implemented natively on Objective-C. iOS 7 or later is required for the Band SDK.</p>
+
+                    	<p>Native iOS development requires the use of <a href="https://developer.apple.com/xcode/">Xcode</a>, only available on Mac OS machines. This is a major problem as we do not have the adequate resources to develop on iOS as a group, as we only have access to one Mac OS PC and one iOS mobile device for testing. If we are to develop the app for iOS, we will only be able to work one at a time. A Mac OS PC is still required to build iOS apps even if we choose to develop the app on a non-native platform using Xamarin or Cordova/PhoneGap (see below). iOS was originally our client's first choice of platform as a majority of their Lone Workers use iOS mobile devices, however it is infeasible for us to build the app on iOS due to our resource constrains.</p>
 
                     	<h3>Android (Java)</h3>
-                    	<p>Microsoft Band SDK supports Android as an official platform. The Band SDK for Android and its features is implemented natively on Android's version of Java. Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. We have managed to build, run, and understand the sample Band SDK apps for Android, including functionalities such as recieving heart rate sensor readings, creating tiles on the Band, sending messages, and creating a tile on the Band with a button that the phone can detect when the button on the Band is pressed. Android is the most widely used mobile OS among the general public, however we do not know for sure how popular Android devices are amongst Lone Workers, and will need to consult with our client further.</p>
+                    	<p>Microsoft Band SDK supports Android as an official platform. The Band SDK for Android and its features is implemented natively on Android's version of Java. Android 4.2 (API 17) and later is required for the Band SDK.</p>
+
+                    	<p>Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. We have managed to build, run, and understand the sample Band SDK apps for Android, including functionalities such as recieving heart rate sensor readings, creating tiles on the Band, sending messages, and creating a tile on the Band with a button that the phone can detect when the button on the Band is pressed. Android is the most widely used mobile OS among the general public, however we do not know for sure how popular Android devices are amongst Lone Workers, and will need to consult with our client further.</p>
 
                     	<h3>Windows (C#)</h3>
-                    	<p>Microsoft Band SDK supports Windows as an official platform. The Band SDK for Windows devices is implemented natively on C#. Since Windows 10, Windows Store apps for Windows mobile devices (previously Windows Phone), tablets, and PCs have been merged into one Universal Windows Platform (UWP). Our app, should we decide to develop for Windows, will still be targeted for mobile devices (UI and functionality wise). Windows apps are typically built using Visual Studio, which is available for free for students, and contains a Windows mobile simulator. Also, we will be able to borrow a Windows mobile device from UCL. However, Windows mobile devices are not as widely used as iOS or Android devices, and we assume not many Lone Workers will be able to benefit from a Windows mobile app.</p>
+                    	<p>Microsoft Band SDK supports Windows as an official platform. The Band SDK for Windows devices is implemented natively on C#. Since Windows 10, Windows Store apps for Windows mobile devices (previously Windows Phone), tablets, and PCs have been merged into one Universal Windows Platform (UWP). Windows 8.1 / Windows Phone 8.1 or later is required for the Band SDK</p>
+
+                    	<p>Our app, should we decide to develop for Windows, will still be targeted for mobile devices (UI and functionality wise). Windows apps are typically built using Visual Studio, which is available for free for students, and contains a Windows mobile simulator. Also, we will be able to borrow a Windows mobile device from UCL. However, Windows mobile devices are not as widely used as iOS or Android devices, and we assume not many Lone Workers will be able to benefit from a Windows mobile app.</p>
 
                     	<h3>Xamarin (C#)</h3>
                     	<p>Xamarin is a cross-platform mobile development tool used to make apps that works simultaneously on iOS and Android with C#. Xamarin apps are structured with an iOS/Android layer that contains the UI and app layers (but still written on C#) and a Core Library layer that contains shared code such as business and data layers. Xamarin allows developers to add components to their apps, and they have a <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Microsoft Band SDK</a> component that which we can potentially use, though we have not tested this yet. While their main products require a <a href="https://store.xamarin.com/">montly or annual payment</a>, they also have a <a href="https://xamarin.com/starter">Starter edition</a> that we can use for free, and should be enough to build our PoC. Xamarin apps can be built with an add-on to Visual Studio or their own Xamarin Studio. However, their Android and iOS development tools require access to Android SDK for Android and Xcode for iOS, and it is impossible to work on the iOS components on non-Mac PCs (<a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Their tutorial</a> claims that it is possible to work on the iOS components on a Windows PC connected to a Mac OS X PC through SSH, though we have not tried it yet). Also, our first try at using the Xamarin Studio (Starter edition) to run their sample app on Android was not successful.</p>
@@ -216,6 +222,21 @@
 
                     	<h3>Microsoft Health Cloud API</h3>
                     	<p><a href="https://developer.microsoftband.com/cloudAPI">Link to official page</a></p>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    	<h3>Google Identity Platform</h3>
+                    	<p><a href="https://developers.google.com/identity/">Link to official page</a></p>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div><!--/.row-->
                     
                     <div class="row">
@@ -251,7 +272,7 @@
                             </ul>
                         </div>
 
-                    </div><!--/!row-->
+                    </div><!--/.row-->
 
                     <div class="row">
 
