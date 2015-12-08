@@ -127,11 +127,6 @@
                     		<h3>Microsoft Band SDK</h3>
                     		<p><a href="http://developer.microsoftband.com/bandSDK">Link to official page</a></p>
                     		<p>The Microsoft Band SDK is the platform necessary to build apps for the Microsoft Band. It is available for iOS, Android, and Windows. The app using the SDK must be built for and installed on the paired smartphone. The SDK then allows the app to customise the Band, including to create new tiles defined by the app and send messages/notifications, and recieve sensor data from the Band. The <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">official documentation</a> for the SDK shows how to implement these functions in native code for iOS, Android, and Windows.</p>
-
-                    		<h3>Web Tiles</h3>
-                    		<p><a href="http://developer.microsoftband.com/WebTile">Link to official page</a></p>
-                    		<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health. Web tiles supports RSS and ATOM feeds. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
-                    		<p>We can use this to send alerts from the Head Office to lone workers, by integrating it to an online dashboard where only the Head Office has access. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers.</p>
                     	</div>
 
                     	<div class="col-xs-12 col-md-5">
@@ -178,10 +173,10 @@
 	                            </ul>
                         </div>
 
-                    </div><!--/!row-->
+                    </div><!--/.row-->
 
                     <div class="row">
-                    	<h2>Platforms and Tools</h2>
+                    	<h2>App Platforms and Tools</h2>
                     	<p>The Microsoft Band supports Windows, Android, and iOS mobile platforms.</p>
                     	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point. We have also discovered third-party(?) Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, however we have yet to be able to get these third-party SDKs to work.</p>
                     	<p>Our app needs to be built for mobile devices (as opposed to tablets or PCs) as we need the app on a device that the Lone Worker will be able to carry with them (along with the Band) all the time while working.</p>
@@ -200,7 +195,28 @@
 
                     	<h3>Cordova/PhoneGap (HTML/CSS/JS)</h3>
                     	<p><a href="https://cordova.apache.org/">Cordova</a> is a tool that allows developers to build mobile apps with HTML, CSS, and JavaScript, targetting multiple platforms with one code base. <a href="http://phonegap.com/">PhoneGap</a> is a distribution of Cordova that adds additional tools. There is no official SDK for Microsoft Band built on Cordova or PhoneGap, but we have found two third-party repositories that claims to have implemented the Microsoft Band SDK for Cordova/PhoneGap, one using <a href="https://github.com/dkundel/band-cordova">Cordova</a> and one using <a href="https://github.com/purplecabbage/phonegap-plugin-msband">PhoneGap</a>. However, our attempts at getting either third-party SDK to build were unsuccessful.</p>
-                    </div><!--/!row-->
+                    </div><!--/.row-->
+
+                    <div class="row">
+
+                    	<h2>Web Components (Dashboard)</h2>
+                    	<p>We also need to develop a web dashboard for the Head Office to be able to send and recieve alerts and recieve 'panic button' alarms from Lone Workers. It should also contain an online authentication systemthat ccan be accessed by Lone Workers via the mobile app. Based on our requirements, our web dashboard needs to do:</p>
+                    	<ul class="center list-fix-align">
+                    		<li>Online authentication system (Mobile app can request authentication for Lone Workers, separates between admin login and Lone Worker login)</li>
+                    		<li>Send (text) alerts from admin/Head Office to all Lone Workers</li>
+                    		<li>Recieve (text) responses to these alerts from Lone Workers and display them on the Dashboard</li>
+                    		<li>Recieve 'panic button' alarms (consisting of heart rate, body temperature, distance walked, and GPS information) from Lone Workers and display them on the Dashboard</li>
+                    		<li>Monitor lone worker's stress levels based on their heart rate</li>
+                    	</ul>
+
+                    	<h3>Web Tiles</h3>
+                    	<p><a href="http://developer.microsoftband.com/WebTile">Link to official page</a></p>
+                    	<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health app on the mobile device. Web tiles supports RSS and ATOM feeds. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
+                    	<p>We can use this to send alerts from the Head Office to lone workers, by integrating it to the dashboard. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers. We will also look for other alternatives to deliver these alerts.</p>
+
+                    	<h3>Microsoft Health Cloud API</h3>
+                    	<p><a href="https://developer.microsoftband.com/cloudAPI">Link to official page</a></p>
+                    </div><!--/.row-->
                     
                     <div class="row">
 
@@ -263,7 +279,7 @@
                             </ul>
                         </div>
                              
-                    </div><!--/!row-->
+                    </div><!--/.row-->
 
                     <div class="row">
 
@@ -284,7 +300,7 @@
                             </ul>
                         </div>
 
-                    </div>
+                    </div><!--/.row-->
 
                 </div>
             </div>
