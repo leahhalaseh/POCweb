@@ -94,12 +94,147 @@
                 <div class="col-sm-12 text-center">
                     <img src="images/aboutus/research.png" class="margin-bottom" alt="">
                     <h1 class="margin-bottom">Research conducted by team members</h1>
+
+                    <div class="row">
+
+                    	<div class="col-xs-12">
+                    		<h2>Microsoft Band Information</h2>
+                    	</div>
+
+                    	<div class="col-xs-12 col-md-7">
+                    		<h3>General Info</h3>
+                    		<p>The Microsoft Band is a wearable device in the form of a smart band with (some) smartwatch features that focuses on health and fitness tracking. The Band by default can track your steps, heart rate, distance travelled, calories burned, etc. via various sensors.</p>
+                    		<p>The Band can be paired with an iOS, Android, or Windows smartphone. It connects to the smartphone via Bluetooth. To pair a phone with the Band, the Microsoft Health app needs to be downloaded on the phone. A single phone can only be paired with a single Microsoft Band (and vice versa) at a time. Once paired, the Band can display notifications from the phone such as e-mails and messages, and apps on the phone (including the Microsoft Health app) can </p>
+                    		<p>There are currently two versions of the Band: The original Microsoft Band, released in Oct 2014, and the Microsoft Band 2 which was released on Nov 2015. The Band 2 incorporates five new sensors, slightly wider resolution (320x128 vs 320x106), and a curved-screen display, but otherwise has the same functionalty and features as the original Band. Apps made for Band 1 can be used for Band 2 and vice versa, though apps using a sensor exclusively for Band 2 are not backwards-compatible.</p>
+
+                    		<h3>Tile UI</h3>
+                    		<p>The Microsoft Band UI is made up of "tiles" which can be opened, and there are several different types of tiles. By default, there are 11 tiles on the Band, and tiles can be added/removed via the Microsoft Health app or by another app on the phone. The Band can have a maximum of 13 tiles at a time. Each tile consists of up to 8 pages of content, opened when the user taps on the tile.</p>
+
+                    		<p>There are two different types of tiles, as defined by the Band SDK Documentation:</p>
+                    		<ul class="list-fix-align">
+	                            <li>Messaging tiles: Displays messages recieved from an app in the phone. We can use this to send alerts from the Head Office to the Band.</li>
+	                            <li>Custom tiles: Can send information to the phone when a button in a page is tapped. We can use this for our panic button.</li>
+	                        </ul>
+
+                    		<p>Each tile has their own:</p>
+                    		<ul class="list-fix-align">
+	                            <li>Icon (46x46px on Band, 48x48px on Band 2)</li>
+	                            <li>Small icon (24x24px)</li>
+	                            <li>Title/name</li>
+	                            <li>UUID</li>
+	                        </ul>   
+
+                    		<h3>Microsoft Band SDK</h3>
+                    		<p><a href="http://developer.microsoftband.com/bandSDK">Link to official page</a></p>
+                    		<p>The Microsoft Band SDK is the platform necessary to build apps for the Microsoft Band. It is available for iOS, Android, and Windows. The app using the SDK must be built for and installed on the paired smartphone. The SDK then allows the app to customise the Band, including to create new tiles defined by the app and send messages/notifications, and recieve sensor data from the Band. The <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">official documentation</a> for the SDK shows how to implement these functions in native code for iOS, Android, and Windows.</p>
+
+                    		<h3>Web Tiles</h3>
+                    		<p><a href="http://developer.microsoftband.com/WebTile">Link to official page</a></p>
+                    		<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health app. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
+                    		<p>We can use this to send alerts from the Head Office to lone workers, by integrating it to an online dashboard where only the Head Office has access. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers.</p>
+                    	</div>
+
+                    	<div class="col-xs-12 col-md-5">
+                    		<h3>Specifications</h3>
+                        		<ul class="center list-fix-align">
+	                                <li> Resolution: 320x106 (Band), 320x128 (Band 2)</li>
+	                                <li> Screen size: 32x11mm (Band), 32x12.8mm (Band 2)</li>
+	                                <li> Wrist diameter: 143-168mm (small), 162-188mm (medium), 180-206mm (large)</li>
+	                            </ul>
+
+	                        <h3>Sensors:</h3>
+	                            <ul class="center list-fix-align">
+	                                <li> Accelerometer </li>
+	                                <li> Gyroscope </li>
+	                                <li> Distance walked</li> 
+	                                <li> Heart Rate </li>
+	                                <li> Pedometer (lifetime counter)</li> 
+	                                <li> Skin Temperature </li>
+	                                <li> UV </li>
+	                                <li> Band Contact (worn/not worn)</li> 
+	                                <li> Calories (lifetime counter) </li>
+	                                <li> (Band 2 Only:) </li>
+	                                <li> Galvanic Skin Response (skin resistance in Kohms)</li> 
+	                                <li> RR Interval (interval b/w two heart beats)</li> 
+	                                <li> Ambient Light </li>
+	                                <li> Barometer (pressure) </li>
+	                                <li> Altimeter (elevation) </li>
+	                            </ul>
+
+	                        <h3>Default tiles:</h3>
+	                            <ul class="center list-fix-align"> 
+	                                <li> Messaging </li>
+	                                <li> Mail </li>
+	                                <li> Calls </li>
+	                                <li> Calendar </li>
+	                                <li> Run </li>
+	                                <li> Bike </li>
+	                                <li> Golf </li>
+	                                <li> Exercise </li>
+	                                <li> Sleep </li>
+	                                <li> Alarm and timer</li> 
+	                                <li> Guided workout</li>
+	                                <li> +Room for 2 more tiles</li>
+	                            </ul>
+                        </div>
+
+                    </div><!--/!row-->
+
+                    <div class="row">
+                    	<h2>Platforms/Components</h2>
+                    	<p>The Microsoft Band supports Windows, Android, and iOS mobile platforms.</p>
+                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. We have also discovered third-party(?) Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, howeveer we have yet to be able to get these third-party SDKs to work.</p>
+
+                    	<h3>iOS (Objective-C)</h3>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    	<h3>Android (Java)</h3>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    	<h3>Windows (C#)</h3>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    	<h3>Xamarin (C#)</h3>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    	<h3>Cordova/PhoneGap (HTML/CSS/JS)</h3>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div><!--/!row-->
                     
                     <div class="row">
 
+                    	<div class="col-xs-12">
+                    		<h2>Resources</h2>
+                    	</div>
+
                         <div class="col-xs-12 col-md-6">
-                           <h2 class="header-fix-align">Microsoft Band SDK: </h2>
-                            <ul class ="center">
+                            <h2>Microsoft Band:</h2>
+                            <ul class="center list-fix-align">
                                 <li> <a href="https://developer.microsoftband.com/">Band developer Page</a> </li>
                                 <li>  <a href="http://developer.microsoftband.com/bandSDK">Band SDK</a> </li>
                                 <li> <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">Band SDK documentation</a> </li>
@@ -110,24 +245,38 @@
                                 <li> <a href="https://www.microsoft.com/microsoft-band/en-gb"> Microsoft Band main page (features etc)</a> </li>
                             </ul>
                         </div>
+                        
+                        <div class="col-xs-12 col-md-6">
+                            <h2>iOS/Android/Windows Phone:</h2>
+                            <ul class="center list-fix-align">
+                                <li><a href="http://developer.android.com/index.html">Android Developer page</a></li>
+                                <li><a href="http://developer.android.com/sdk/index.html">Android SDK/Android Studio download page</a></li>
+                                <li><a href="http://developer.android.com/reference/packages.html">Android SDK documentation</a></li>
+                                <li><a href="http://developer.android.com/guide/index.html">Android API Guide</a></li>
+                                <li><a href="https://developer.apple.com/ios/">iOS Developer page</a></li>
+                                <li><a href="https://developer.apple.com/library/ios/navigation/">iOS Developer Library</a></li>
+                                <li><a href="https://dev.windows.com/en-us">Windows Dev Center</a></li>
+                            </ul>
+                        </div>
 
-                        <div class="col-xs-12 col-md-6">           
-                            <h2 class="header-fix-align">Xamarin: </h2>
-                            <ul class ="center">
+                    </div><!--/!row-->
+
+                    <div class="row">
+
+                    	<div class="col-xs-12 col-md-6">           
+                            <h2>Xamarin:</h2>
+                            <ul class="center list-fix-align">
                                  <li> <a href="https://xamarin.com/starter "> Xamarin Starter (Free)</a> </li>
                                  <li> <a href="https://xamarin.com/getting-started/ios"> Getting started (iOS)</a> </li>
                                  <li> <a href="http://developer.xamarin.com/  ">  Guides, Recipes, Samples, API/Documentation</a> </li>
-                                 <li> <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk ">Band SDK</a> </li>
+                                 <li> <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk ">Band SDK for Xamarin</a> </li>
                                  <li> <a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Installation Guide </a> </li>
                              </ul>
                         </div>
-                     
-                    </div>
-                    <div class="row">
 
                         <div class="col-xs-12 col-md-6">  
-                            <h2 class="header-fix-align">PhoneGap/Cordova: </h2> 
-                             <ul class ="center">
+                            <h2>PhoneGap/Cordova:</h2> 
+                             <ul class="center list-fix-align">
                                 <li> <a href="https://cordova.apache.org/">Cordova</a> </li>
                                 <li> <a href="http://phonegap.com/">PhoneGap</a> </li> 
                                 <li> <a href="https://build.phonegap.com/">PhoneGap Build</a> </li>
@@ -137,54 +286,24 @@
                             </ul>
                         </div>
                              
+                    </div><!--/!row-->
+
+                    <div class="row">
+
                         <div class="col-xs-12 col-md-6">
-                           <h2 class="header-fix-align">Guides: </h2>
-                            <ul class ="center">
+                           <h2>Guides:</h2>
+                            <ul class="center list-fix-align">
                                 <li> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction ">JavaScript</a> </li>
                                 <li> <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd(v=vs.120).aspx">C#</a> </li>
-                                <li> <a href="https://www.uuidgenerator.net/">UUID Generator</a> </li>
+                                <li> <a href="https://docs.oracle.com/javase/tutorial/">Java</a></li>
+                                <li> <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C</a></li>
                             </ul>
                         </div>
 
-                    </div>
-                    <div class="row">
-                        
                         <div class="col-xs-12 col-md-6">
-                            <h2 class="header-fix-align">Default Tiles in the band :</h2>
-                             <ul class ="center"> 
-                                <li> Messaging </li>
-                                <li> Mail </li>
-                                <li> Calls </li>
-                                <li> Calendar </li>
-                                <li> Run </li>
-                                <li> Bike </li>
-                                <li> Golf </li>
-                                <li> Exercise </li>
-                                <li> Sleep </li>
-                                <li> Alarm and timer</li> 
-                                <li> Guided workout </li>
-                                <li> Room for 2 tiles left </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="col-xs-12 col-md-6">     
-                            <h2 class="header-fix-align"> Sensors: </h2>
-                             <ul class ="center">
-                                <li> Accelerometer </li>
-                                <li> Gyroscope </li>
-                                <li> Distance walked</li> 
-                                <li> Heart Rate </li>
-                                <li> Pedometer (lifetime counter)</li> 
-                                <li> Skin Temperature </li>
-                                <li> UV </li>
-                                <li> Band Contact (worn/not worn)</li> 
-                                <li> Calories (lifetime counter) </li>
-                                <li><b> Band 2 Only: </b></li>
-                                <li> Galvanic Skin Response (skin resistance in Kohms)</li> 
-                                <li> RR Interval (interval b/w two heart beats)</li> 
-                                <li> Ambient Light </li>
-                                <li> Barometer (pressure) </li>
-                                <li> Altimeter (elevation) </li>
+                           <h2>Other:</h2>
+                            <ul class="center list-fix-align">
+                                <li> <a href="https://www.uuidgenerator.net/">UUID Generator</a> </li>
                             </ul>
                         </div>
 
