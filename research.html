@@ -218,25 +218,23 @@
                     	<h3>Web Tiles</h3>
                     	<p><a href="http://developer.microsoftband.com/WebTile">Link to official page</a></p>
                     	<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health app on the mobile device. Web tiles supports RSS and ATOM feeds. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
-                    	<p>We can use this to send alerts from the Head Office to lone workers, by integrating it to the dashboard. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers. We will also look for other alternatives to deliver these alerts.</p>
+                    	<p>We will look into using Web Tiles to send alerts from the Head Office to lone workers, by integrating it to the dashboard. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers. We will also look for other alternatives to deliver these alerts.</p>
 
                     	<h3>Microsoft Health Cloud API</h3>
                     	<p><a href="https://developer.microsoftband.com/cloudAPI">Link to official page</a></p>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    	<p>The Microsoft Health Cloud API allows client apps and services to make use of real-time user data from the Microsoft Band. It provides said data using RESTful APIs in a JSON format. The client apps can be web, windows (desktop) or windows (mobile) based. The API can be implemented in C# (Windows) or Javascript (Web).</p>
+                    	<p>We will look into the possibility of using this API to integrate real-time data of each worker's stress levels to the dashboard.</p>
 
                     	<h3>Google Identity Platform</h3>
                     	<p><a href="https://developers.google.com/identity/">Link to official page</a></p>
-	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	                    <p>Google Identity Platform is a set of identity tools from Google to quickly build an auth system. It contains the following tools that we can possibly use:</p>
+	                    <ul class="center list-fix-align">
+                    		<li>Google Sign-In, enabling users to sign in to the app using their Google account. (Android/iOS/Web)</li>
+                    		<li>Smart Lock for Passwords, a password tool that allows users to be automatically signed in across all of their Chrome and Android devices after their first sign-up/sign-in. (Android only)</li>
+                    		<li>Identity Toolkit, a toolkit that provides password authentication and federated sign-in with major identity providers such as Google, Facebook, and more. (Android/iOS/Web)</li>
+                    		<li>OpenID Connect, An OAuth 2.0-based protocol to build our own sign-in solutions.</li>
+                    	</ul>
+	                    <p>We will look into using one or more Google Identity Platform tool to build an online auth system for our app. We will also look for other possible alternatives.</p>
                     </div><!--/.row-->
                     
                     <div class="row">
