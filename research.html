@@ -135,6 +135,13 @@
 	                                <li> Resolution: 320x106 (Band), 320x128 (Band 2)</li>
 	                                <li> Screen size: 32x11mm (Band), 32x12.8mm (Band 2)</li>
 	                                <li> Wrist diameter: 143-168mm (small), 162-188mm (medium), 180-206mm (large)</li>
+                                    <li> Battery: 2 x 100 mAh, ~48 hours of normal use</li>
+                                    <li> Working temperature ranges: -10°C to 40°C</li>
+                                    <li> Maximum operating altitude: 1,200m (Band), 4,877m (Band 2)</li>
+                                    <li> Bluetooth 4.0 (low energy)</li>
+                                    <li> Microphone </li>
+                                    <li> Haptic feedback</li>
+                                    <li> <a href="http://www.microsoft.com/microsoft-band/en-gb/support/hardware/specifications">Official specifications page</a></li>
 	                            </ul>
 
 	                        <h3>Sensors:</h3>
@@ -175,7 +182,7 @@
 
                     </div><!--/.row-->
 
-                    <div class="row">
+                    <div class="row padtop-slight">
                     	<h2>App Platforms and Tools</h2>
                     	<p>The Microsoft Band supports Windows, Android, and iOS mobile platforms.</p>
                     	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point. We have also discovered third-party(?) Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, however we have yet to be able to get these third-party SDKs to work.</p>
@@ -197,13 +204,13 @@
                     	<p>Our app, should we decide to develop for Windows, will still be targeted for mobile devices (UI and functionality wise). Windows apps are typically built using Visual Studio, which is available for free for students, and contains a Windows mobile simulator. Also, we will be able to borrow a Windows mobile device from UCL. However, Windows mobile devices are not as widely used as iOS or Android devices, and we assume not many Lone Workers will be able to benefit from a Windows mobile app.</p>
 
                     	<h3>Xamarin (C#)</h3>
-                    	<p>Xamarin is a cross-platform mobile development tool used to make apps that works simultaneously on iOS and Android with C#. Xamarin apps are structured with an iOS/Android layer that contains the UI and app layers (but still written on C#) and a Core Library layer that contains shared code such as business and data layers. Xamarin allows developers to add components to their apps, and they have a <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Microsoft Band SDK</a> component that which we can potentially use, though we have not tested this yet. While their main products require a <a href="https://store.xamarin.com/">montly or annual payment</a>, they also have a <a href="https://xamarin.com/starter">Starter edition</a> that we can use for free, and should be enough to build our PoC. Xamarin apps can be built with an add-on to Visual Studio or their own Xamarin Studio. However, their Android and iOS development tools require access to Android SDK for Android and Xcode for iOS, and it is impossible to work on the iOS components on non-Mac PCs (<a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Their tutorial</a> claims that it is possible to work on the iOS components on a Windows PC connected to a Mac OS X PC through SSH, though we have not tried it yet). Also, our first try at using the Xamarin Studio (Starter edition) to run their sample app on Android was not successful.</p>
+                    	<p><a href="https://xamarin.com/">Xamarin</a> is a cross-platform mobile development tool used to make apps that works simultaneously on iOS and Android with C#. Xamarin apps are structured with an iOS/Android layer that contains the UI and app layers (but still written on C#) and a Core Library layer that contains shared code such as business and data layers. Xamarin allows developers to add components to their apps, and they have a <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Microsoft Band SDK</a> component that which we can potentially use, though we have not tested this yet. While their main products require a <a href="https://store.xamarin.com/">montly or annual payment</a>, they also have a <a href="https://xamarin.com/starter">Starter edition</a> that we can use for free, and should be enough to build our PoC. Xamarin apps can be built with an add-on to Visual Studio or their own Xamarin Studio. However, their Android and iOS development tools require access to Android SDK for Android and Xcode for iOS, and it is impossible to work on the iOS components on non-Mac PCs (<a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Their tutorial</a> claims that it is possible to work on the iOS components on a Windows PC connected to a Mac OS X PC through SSH, though we have not tried it yet). Also, our first try at using the Xamarin Studio (Starter edition) to run their sample app on Android was not successful.</p>
 
                     	<h3>Cordova/PhoneGap (HTML/CSS/JS)</h3>
                     	<p><a href="https://cordova.apache.org/">Cordova</a> is a tool that allows developers to build mobile apps with HTML, CSS, and JavaScript, targetting multiple platforms with one code base. <a href="http://phonegap.com/">PhoneGap</a> is a distribution of Cordova that adds additional tools. There is no official SDK for Microsoft Band built on Cordova or PhoneGap, but we have found two third-party repositories that claims to have implemented the Microsoft Band SDK for Cordova/PhoneGap, one using <a href="https://github.com/dkundel/band-cordova">Cordova</a> and one using <a href="https://github.com/purplecabbage/phonegap-plugin-msband">PhoneGap</a>. However, our attempts at getting either third-party SDK to build were unsuccessful.</p>
                     </div><!--/.row-->
 
-                    <div class="row">
+                    <div class="row padtop-slight">
 
                     	<h2>Web Components (Dashboard)</h2>
                     	<p>We also need to develop a web dashboard for the Head Office to be able to send and recieve alerts and recieve 'panic button' alarms from Lone Workers. It should also contain an online authentication systemthat ccan be accessed by Lone Workers via the mobile app. Based on our requirements, our web dashboard needs to do:</p>
@@ -237,7 +244,7 @@
 	                    <p>We will look into using one or more Google Identity Platform tool to build an online auth system for our app. We will also look for other possible alternatives.</p>
                     </div><!--/.row-->
                     
-                    <div class="row">
+                    <div class="row padtop-slight">
 
                     	<div class="col-xs-12">
                     		<h2>Resources</h2>

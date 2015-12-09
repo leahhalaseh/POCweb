@@ -2747,3 +2747,20 @@ span.stButton_gradient,
     vertical-align: middle;
     padding: 4pc;
 }
+
+.padtop-slight{
+  padding-top: 1pc;
+}
+
+th {
+  text-align: center;
+  font-size: 130%;
+}
+
+td {
+  font-size: 120%;
+}
+
+.list-group-item {
+  font-size: 120%;
+}
