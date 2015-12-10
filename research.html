@@ -104,15 +104,15 @@
                     	<div class="col-xs-12 col-md-7">
                     		<h3>General Info</h3>
                     		<p>The Microsoft Band is a wearable device in the form of a smart band with (some) smartwatch features that focuses on health and fitness tracking. The Band by default can track your steps, heart rate, distance travelled, calories burned, etc. via various sensors.</p>
-                    		<p>The Band can be paired with an iOS, Android, or Windows smartphone. It connects to the smartphone via Bluetooth. To pair a phone with the Band, the Microsoft Health app needs to be downloaded on the phone. A single phone can only be paired with a single Microsoft Band (and vice versa) at a time. Once paired, the Band can display notifications from the phone such as e-mails and messages, and apps on the phone (including the Microsoft Health app) can </p>
+                    		<p>The Band can be paired with an iOS, Android, or Windows smartphone. It connects to the smartphone via Bluetooth. To pair a phone with the Band, the Microsoft Health app needs to be downloaded on the phone. A single phone can only be paired with a single Microsoft Band (and vice versa) at a time. Once paired, the Band can display notifications from the phone such as e-mails and messages, and apps on the phone (including the Microsoft Health app) can alter how the Band works, such as by adding and removing tiles.</p>
                     		<p>There are currently two versions of the Band: The original Microsoft Band, released in Oct 2014, and the Microsoft Band 2 which was released on Nov 2015. The Band 2 incorporates five new sensors, slightly wider resolution (320x128 vs 320x106), and a curved-screen display, but otherwise has the same functionalty and features as the original Band. Apps made for Band 1 can be used for Band 2 and vice versa, though apps using a sensor exclusively for Band 2 are not backwards-compatible.</p>
 
                     		<h3>Tile UI</h3>
-                    		<p>The Microsoft Band UI is made up of "tiles" which can be opened, and there are several different types of tiles. By default, there are 11 tiles on the Band, and tiles can be added/removed via the Microsoft Health app or by another app on the phone. The Band can have a maximum of 13 tiles at a time. Each tile consists of up to 8 pages of content, opened when the user taps on the tile.</p>
+                    		<p>The Microsoft Band UI is made up of "tiles" which can be opened. By default, there are 11 tiles on the Band, and tiles can be added/removed via the Microsoft Health app or by another app on the phone. The Band can have a maximum of 13 tiles at a time. Each tile consists of up to 8 pages of content.</p>
 
                     		<p>There are two different types of tiles, as defined by the Band SDK Documentation:</p>
                     		<ul class="list-fix-align">
-	                            <li>Messaging tiles: Displays messages recieved from an app in the phone. We can use this to send alerts from the Head Office to the Band.</li>
+	                            <li>Messaging tiles: Displays messages received from an app in the phone. We can use this to send alerts from the Head Office to the Band.</li>
 	                            <li>Custom tiles: Can send information to the phone when a button in a page is tapped. We can use this for our panic button.</li>
 	                        </ul>
 
@@ -126,7 +126,7 @@
 
                     		<h3>Microsoft Band SDK</h3>
                     		<p><a href="http://developer.microsoftband.com/bandSDK">Link to official page</a></p>
-                    		<p>The Microsoft Band SDK is the platform necessary to build apps for the Microsoft Band. It is available for iOS, Android, and Windows. The app using the SDK must be built for and installed on the paired smartphone. The SDK then allows the app to customise the Band, including to create new tiles defined by the app and send messages/notifications, and recieve sensor data from the Band. The <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">official documentation</a> for the SDK shows how to implement these functions in native code for iOS, Android, and Windows.</p>
+                    		<p>The Microsoft Band SDK is the development platform necessary to build apps for the Microsoft Band. It is available for iOS, Android, and Windows mobile OSes. The app using the SDK must be built for and installed on the paired smartphone. The SDK then allows the app to customise the Band, including to create new tiles defined by the app and send messages/notifications, and receive sensor data from the Band. The <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">official documentation</a> for the SDK shows how to implement these functions in native code for iOS, Android, and Windows.</p>
                     	</div>
 
                     	<div class="col-xs-12 col-md-5">
@@ -185,7 +185,7 @@
                     <div class="row padtop-slight">
                     	<h2>App Platforms and Tools</h2>
                     	<p>The Microsoft Band supports Windows, Android, and iOS mobile platforms.</p>
-                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point. We have also discovered third-party(?) Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, however we have yet to be able to get these third-party SDKs to work.</p>
+                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point. We have also discovered third-party Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, however we have yet to be able to get these third-party SDKs to work.</p>
                     	<p>Our app needs to be built for mobile devices (as opposed to tablets or PCs) as we need the app on a device that the Lone Worker will be able to carry with them (along with the Band) all the time while working.</p>
 
                     	<h3>iOS (Objective-C)</h3>
@@ -196,7 +196,7 @@
                     	<h3>Android (Java)</h3>
                     	<p>Microsoft Band SDK supports Android as an official platform. The Band SDK for Android and its features is implemented natively on Android's version of Java. Android 4.2 (API 17) and later is required for the Band SDK.</p>
 
-                    	<p>Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. We have managed to build, run, and understand the sample Band SDK apps for Android, including functionalities such as recieving heart rate sensor readings, creating tiles on the Band, sending messages, and creating a tile on the Band with a button that the phone can detect when the button on the Band is pressed. Android is the most widely used mobile OS among the general public, however we do not know for sure how popular Android devices are amongst Lone Workers, and will need to consult with our client further.</p>
+                    	<p>Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. We have managed to build, run, and modify the sample Band SDK apps for Android, including functionalities such as receiving heart rate sensor readings, creating tiles on the Band, sending messages, and creating a tile on the Band with a button that the phone can detect when the button on the Band is pressed. Android is the most widely used mobile OS among the general public, however we do not know for sure how popular Android devices are amongst Lone Workers, and will need to consult with our client further.</p>
 
                     	<h3>Windows (C#)</h3>
                     	<p>Microsoft Band SDK supports Windows as an official platform. The Band SDK for Windows devices is implemented natively on C#. Since Windows 10, Windows Store apps for Windows mobile devices (previously Windows Phone), tablets, and PCs have been merged into one Universal Windows Platform (UWP). Windows 8.1 / Windows Phone 8.1 or later is required for the Band SDK</p>
@@ -213,12 +213,12 @@
                     <div class="row padtop-slight">
 
                     	<h2>Web Components (Dashboard)</h2>
-                    	<p>We also need to develop a web dashboard for the Head Office to be able to send and recieve alerts and recieve 'panic button' alarms from Lone Workers. It should also contain an online authentication systemthat ccan be accessed by Lone Workers via the mobile app. Based on our requirements, our web dashboard needs to do:</p>
+                    	<p>We also need to develop a web dashboard for the Head Office to be able to send and receive alerts and receive 'panic button' alarms from Lone Workers. It should also contain an online authentication systemthat ccan be accessed by Lone Workers via the mobile app. Based on our requirements, our web dashboard needs to do:</p>
                     	<ul class="center list-fix-align">
                     		<li>Online authentication system (Mobile app can request authentication for Lone Workers, separates between admin login and Lone Worker login)</li>
                     		<li>Send (text) alerts from admin/Head Office to all Lone Workers</li>
-                    		<li>Recieve (text) responses to these alerts from Lone Workers and display them on the Dashboard</li>
-                    		<li>Recieve 'panic button' alarms (consisting of heart rate, body temperature, distance walked, and GPS information) from Lone Workers and display them on the Dashboard</li>
+                    		<li>Receive (text) responses to these alerts from Lone Workers and display them on the Dashboard</li>
+                    		<li>Receive 'panic button' alarms (consisting of heart rate, body temperature, distance walked, and GPS information) from Lone Workers and display them on the Dashboard</li>
                     		<li>Monitor lone worker's stress levels based on their heart rate</li>
                     	</ul>
 
@@ -230,7 +230,7 @@
                     	<h3>Microsoft Health Cloud API</h3>
                     	<p><a href="https://developer.microsoftband.com/cloudAPI">Link to official page</a></p>
                     	<p>The Microsoft Health Cloud API allows client apps and services to make use of real-time user data from the Microsoft Band. It provides said data using RESTful APIs in a JSON format. The client apps can be web, windows (desktop) or windows (mobile) based. The API can be implemented in C# (Windows) or Javascript (Web).</p>
-                    	<p>We will look into the possibility of using this API to integrate real-time data of each worker's stress levels to the dashboard.</p>
+                    	<p>We will look into the possibility of using this API to integrate real-time data of each worker's heart rate (for stress levels) on the dashboard.</p>
 
                     	<h3>Google Identity Platform</h3>
                     	<p><a href="https://developers.google.com/identity/">Link to official page</a></p>
