@@ -187,36 +187,54 @@
                     </div><!--/.row-->
 
                     <div class="row padtop-slight">
-                    	<h1>App Platforms and Tools</h1>
+                    	<h1>Mobile Platforms and Tools</h1>
                     	<p>The Microsoft Band supports Windows, Android, and iOS mobile platforms.</p>
-                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point. We have also discovered third-party Band SDKs for cross-platform development platforms <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Xamarin</a>, <a href="https://github.com/dkundel/band-cordova">Cordova</a>, and <a href="http://purplecabbage.github.io/slides/PGMeetupApr2015/index.html#/7">PhoneGap</a>, however we have yet to be able to get these third-party SDKs to work.</p>
+                    	<p>The Band SDK allows apps to be built for either of these platforms to communicate with the Band. The SDK is built using native code (C# for Windows, Java for Android, and Objective-C for iOS, respectively) and the mobile app has to be built in native code if we are to make use of the SDK as shown in the official documentation. Microsoft has also provided sample apps for the Band in Windows, Android, and iOS as a starting point.
                     	<p>Our app needs to be built for mobile devices (as opposed to tablets or PCs) as we need the app on a device that the Lone Worker will be able to carry with them (along with the Band) all the time while working.</p>
 
-                    	<h3>iOS (Objective-C)</h3>
-                    	<p>Microsoft Band SDK supports iOS as an official platform. The Band SDK for iOS and its features is implemented natively on Objective-C. iOS 7 or later is required for the Band SDK.</p>
+                        <h2>Platform Choice</h2>
+                        <p>Our mobile platform of choice for this Proof of Concept application is Windows Phone 8.1.</p>
 
-                    	<p>Native iOS development requires the use of <a href="https://developer.apple.com/xcode/">Xcode</a>, only available on Mac OS machines. This is a major problem as we do not have the adequate resources to develop on iOS as a group, as we only have access to one Mac OS PC and one iOS mobile device for testing. If we are to develop the app for iOS, we will only be able to work one at a time. A Mac OS PC is still required to build iOS apps even if we choose to develop the app on a non-native platform using Xamarin or Cordova/PhoneGap (see below). iOS was originally our client's first choice of platform as a majority of their Lone Workers use iOS mobile devices, however it is infeasible for us to build the app on iOS due to our resource constrains.</p>
+                        <p>Microsoft Band SDK supports Windows Phone as an official platform. The Band SDK for Windows devices is implemented natively on C#. Windows Phone 8.1 or later is required.</p>
 
-                    	<h3>Android (Java)</h3>
-                    	<p>Microsoft Band SDK supports Android as an official platform. The Band SDK for Android and its features is implemented natively on Android's version of Java. Android 4.2 (API 17) and later is required for the Band SDK.</p>
+                        <p>The reason why we chose Windows Phone as the initial platform for our mobile application is mainly because of our resource availability and client considerations. Windows Phone apps are typically built using <a href="https://www.visualstudio.com/">Visual Studio</a>, which is available for free for students, and contains a Windows mobile emulator. We were also able to borrow Windows Phone mobile devices from UCL. Also, Network Rail provides Windows Phone mobile devices as work phones to their lone workers and their current solution runs on Windows Phone. Furthermore, both Microsoft Band and Windows Phone are Microsoft products, whom we are working with.</p>
 
-                    	<p>Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. We have managed to build, run, and modify the sample Band SDK apps for Android, including functionalities such as receiving heart rate sensor readings, creating tiles on the Band, sending messages, and creating a tile on the Band with a button that the phone can detect when the button on the Band is pressed. Android is the most widely used mobile OS among the general public, however we do not know for sure how popular Android devices are amongst Lone Workers, and will need to consult with our client further.</p>
+                        <p>The tool we used to develop our mobile app is Visual Studio Enterprise 2015, available for free to us through UCL CS's DreamSpark subscription, with the  <a href="https://www.jetbrains.com/resharper/">ReSharper</a> add-on for C# (also free for students). Windows mobile apps can be written in either C#/XAML, C++/XAML, or JS/HTML. We chose to use C# and XAML for our app because it is the language used by the Band SDK for Windows Phone, and writing the rest of the app in the same language makes the app development process simpler. It is also the language we are most comfortable with among those three. Visual Studio also contains <a href="https://www.nuget.org/">NuGet</a>, a package manager for .NET apps which allows us to install and update essential packages such as the Band SDK to our app with ease.</p>
 
-                    	<h3>Windows (C#)</h3>
-                    	<p>Microsoft Band SDK supports Windows as an official platform. The Band SDK for Windows devices is implemented natively on C#. Since Windows 10, Windows Store apps for Windows mobile devices (previously Windows Phone), tablets, and PCs have been merged into one Universal Windows Platform (UWP). Windows 8.1 / Windows Phone 8.1 or later is required for the Band SDK</p>
+                        <h2>Other Platforms Considered</h2>
 
-                    	<p>Our app, should we decide to develop for Windows, will still be targeted for mobile devices (UI and functionality wise). Windows apps are typically built using Visual Studio, which is available for free for students, and contains a Windows mobile simulator. Also, we will be able to borrow a Windows mobile device from UCL. However, Windows mobile devices are not as widely used as iOS or Android devices, and we assume not many Lone Workers will be able to benefit from a Windows mobile app.</p>
+                        <p>We also considered other mobile platforms for our mobile application. Below are a list of the platforms we considered and the details on each:</p>
 
-                    	<h3>Xamarin (C#)</h3>
+                    	<h3>iOS</h3>
+                    	<p>Microsoft Band SDK supports iOS as an official platform. The Band SDK for iOS and its features is implemented natively on Objective-C. iOS 7 or later is required.</p>
+
+                    	<p>Native iOS development requires the use of <a href="https://developer.apple.com/xcode/">Xcode</a>, only available on Mac OS machines. This is a major problem as we do not have the adequate resources to develop on iOS as a group, as we only have access to one Mac OS PC and one iOS mobile device for testing. If we are to develop the app for iOS, we will only be able to work one at a time. A Mac OS PC is still required to build iOS apps even if we choose to develop the app on a non-native platform using Xamarin or Cordova/PhoneGap. Also, iOS development requires us to use Objective-C and/or Swift, which we are unfamiliar with.</p>
+
+                    	<h3>Android</h3>
+                    	<p>Microsoft Band SDK supports Android as an official platform. The Band SDK for Android and its features is implemented natively on Android's version of Java. Android 4.2 (API 17) or later is required.</p>
+
+                    	<p>Native Android apps are developed on <a href="http://developer.android.com/sdk/index.html">Android SDK</a>, a slightly modified version of Java with Anrdoid features and Google APIs included, and typically developed using <a href="http://developer.android.com/sdk/index.html">Android Studio</a>. Android is the most widely used mobile OS among the general public. However, our clients Microsoft UK and Network Rail does not typically develop for Android or has capabilities to test our application on Android, nor do they provide Android mobile devices to their Lone Workers, so Android was not very suitable for our clients.</p>
+
+                    	<h3>Xamarin</h3>
                     	<p><a href="https://xamarin.com/">Xamarin</a> is a cross-platform mobile development tool used to make apps that works simultaneously on iOS and Android with C#. Xamarin apps are structured with an iOS/Android layer that contains the UI and app layers (but still written on C#) and a Core Library layer that contains shared code such as business and data layers. Xamarin allows developers to add components to their apps, and they have a <a href="https://components.xamarin.com/gettingstarted/microsoft-band-sdk">Microsoft Band SDK</a> component that which we can potentially use, though we have not tested this yet. While their main products require a <a href="https://store.xamarin.com/">montly or annual payment</a>, they also have a <a href="https://xamarin.com/starter">Starter edition</a> that we can use for free, and should be enough to build our PoC. Xamarin apps can be built with an add-on to Visual Studio or their own Xamarin Studio. However, their Android and iOS development tools require access to Android SDK for Android and Xcode for iOS, and it is impossible to work on the iOS components on non-Mac PCs (<a href="http://developer.xamarin.com/guides/ios/getting_started/installation/windows/">Their tutorial</a> claims that it is possible to work on the iOS components on a Windows PC connected to a Mac OS X PC through SSH, though we have not tried it yet). Also, our first try at using the Xamarin Studio (Starter edition) to run their sample app on Android was not successful.</p>
 
-                    	<h3>Cordova/PhoneGap (HTML/CSS/JS)</h3>
+                    	<h3>Cordova/PhoneGap</h3>
                     	<p><a href="https://cordova.apache.org/">Cordova</a> is a tool that allows developers to build mobile apps with HTML, CSS, and JavaScript, targetting multiple platforms with one code base. <a href="http://phonegap.com/">PhoneGap</a> is a distribution of Cordova that adds additional tools. There is no official SDK for Microsoft Band built on Cordova or PhoneGap, but we have found two third-party repositories that claims to have implemented the Microsoft Band SDK for Cordova/PhoneGap, one using <a href="https://github.com/dkundel/band-cordova">Cordova</a> and one using <a href="https://github.com/purplecabbage/phonegap-plugin-msband">PhoneGap</a>. However, our attempts at getting either third-party SDK to build were unsuccessful.</p>
+
+                        <h2>Additional Code Packages</h2>
+
+                        <p>The code packages that we researched to use in our Windows Phone application are:</p>
+
+                        <h3><a href="https://www.nuget.org/packages/Microsoft.Band/">Microsoft Band SDK</a></h3>
+                        <p>The Microsoft Band SDK is essential to build the core functionality of our app. It contains the functionality necessary to allow the app to communicate with the Band, pull sensor data, add additional tiles, and send a notification to the Band. It is available through the NuGet Package Manager.</p>
+
+                        <h3><a href="https://www.nuget.org/packages/Newtonsoft.Json/">Json.NET</a></h3>
+                        <p>Json.NET is a popular high-performance JSON framework for .NET. It allows us to serialize C# objects to JSON strings and deserialize JSON strings to C# objects with a single method call. We can use this to store app data as strings locally in the user's mobile device. It is available through the NuGet Package Manager.</p>
+
+                        <h3><a href="https://www.nuget.org/packages/Microsoft.Net.Http/">Microsoft HTTP Client Libraries</a></h3>
+                        <p>>Microsoft HTTP Client Libraries is a package that contains methods that allows C# Windows apps to send requests over HTTP and process HTTP messages. It is essential to enable our app to communicate by sending HTTP requests to our web dashboard and handling the response. It is available through the NuGet Package Manager.</p>
                         
                         <div class="row padtop-slight">
-                        
-                    	<h2>Platform Choice</h2>
-                    	<p>At the moment, our platform of choice for the development of the prototype is Android. While our client's first choice is iOS, we did not have the resources to develop as a team for iOS. Android is more widely used than Windows mobile so between these two we went with Android. We tried also to use cross-platform tools such as Xamarin and Cordova/PhoneGap using third-party Band SDKs but none of the SDKs for these platforms worked in our testing. With these considerations, we chose to work with native Android for the prorotype for now.</p>
                    
                    </div>
                     </div><!--/.row-->
@@ -225,29 +243,34 @@
                     	<h1>Web Components (Dashboard)</h1>
                     	<p>We also need to develop a web dashboard for the Head Office to be able to send and receive alerts and receive 'panic button' alarms from Lone Workers. It should also contain an online authentication systemthat ccan be accessed by Lone Workers via the mobile app. Based on our requirements, our web dashboard needs to do:</p>
                     	<ul class="center list-fix-align">
-                    		<li>Online authentication system (Mobile app can request authentication for Lone Workers, separates between admin login and Lone Worker login)</li>
-                    		<li>Send (text) alerts from admin/Head Office to all Lone Workers</li>
-                    		<li>Receive (text) responses to these alerts from Lone Workers and display them on the Dashboard</li>
+                    		<li>Send alerts from admin/Head Office to all Lone Workers</li>
+                    		<li>Receive responses to these alerts from Lone Workers and display them on the Dashboard</li>
                     		<li>Receive 'panic button' alarms (consisting of heart rate, body temperature, distance walked, and GPS information) from Lone Workers and display them on the Dashboard</li>
-                    		<li>Monitor lone worker's stress levels based on their heart rate</li>
                     	</ul>
 
-                    	<h3>Web Tiles</h3>
-                    	<p><a href="http://developer.microsoftband.com/WebTile">Link to official page</a></p>
-                    	<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health app on the mobile device. Web tiles supports RSS and ATOM feeds. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>.</p>
-                    	<p>We will look into using Web Tiles to send alerts from the Head Office to lone workers, by integrating it to the dashboard. The Head Office shall be able to send messages to the web tiles of every lone worker through the dashboard. We will also look into allowing the Head Office to only send alerts to specific workers. We will also look for other alternatives to deliver these alerts.</p>
+                        We used <a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> (available free for students) as the IDE to develop our web dashboard. (and this web site)
 
-                    	<h3>Microsoft Health Cloud API</h3>
-                    	<p><a href="https://developer.microsoftband.com/cloudAPI">Link to official page</a></p>
-                    	<p>The Microsoft Health Cloud API allows client apps and services to make use of real-time user data from the Microsoft Band. It provides said data using RESTful APIs in a JSON format. The client apps can be web, windows (desktop) or windows (mobile) based. The API can be implemented in C# (Windows) or Javascript (Web).</p>
+                        <h2>Tools used</h2>
 
-                    	<p>We will look into the possibility of using this API to integrate real-time data of each worker's heart rate (for stress levels) on the dashboard.</p>
+                        <p>In order to fulfil the stated requirements, we researched the following services:</p>
 
-                    	<p>We will look into the possibility of using this API to integrate real-time data of each worker's stress levels to the dashboard.</p>
+                        <h3><a href="https://www.heroku.com/platform">Heroku Platform</a></h3>
+                        <p>Heroku Platform is a cloud Platform-as-a-Service tool. It allows us to deploy our web dashboard online on their servers. The servers can run our web server code in Javascript, Ruby, Java, PHP, Python, Go, Scala, or Clojure and handles incoming HTTP requests. Heroku also provides sample applications for each language that allows us to develop an up and running web app quickly. Their documentation can be found on their <a href="https://devcenter.heroku.com/">dev center</a>.</p>
 
+                        <h3><a href="https://nodejs.org/en/">Node.js</a></h3>
+                        <p>Node.js is a Javascript runtime environment for server-side Web applications. We used Node.js to develop our web dashboard based on Heroku's sample Javascript application. It allows for our web dashboard to handle HTTP requests such as GET and POST from our app. The documentation for Node.js can be accessed <a href="https://nodejs.org/api/">here</a>.</p>
 
-                    	<h3>Google Identity Platform</h3>
-                    	<p><a href="https://developers.google.com/identity/">Link to official page</a></p>
+                        <h2>Other Tools Considered</h2>
+
+                        <p>Below are tools that we researched for our web dashboard but did not end up using in our current product. These tools should be considered for the future development of the product.</p>
+
+                    	<h3><a href="http://developer.microsoftband.com/WebTile">Web Tiles</a></h3>
+                    	<p>Microsoft Band web tile allows developers to deliver information to Microsoft Band from virtually any data source on the web. Web Tiles once set up will periodically fetch web resources (using JSON or XML formats) and delivering them to the web tile on the Band. Web tiles are controlled by the Microsoft Health app on the mobile device. Web tiles supports RSS and ATOM feeds. More information and details on how to implement it can be found on the <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">documentation</a>. Web Tiles could be used as an alternative way to send alerts from the Head Office to lone workers.</p>
+
+                    	<h3><a href="https://developer.microsoftband.com/cloudAPI">Microsoft Health Cloud API</a></h3>
+                    	<p>The Microsoft Health Cloud API allows client apps and services to make use of real-time user data from the Microsoft Band. It provides said data using RESTful APIs in a JSON format. The client apps can be web, windows (desktop) or windows (mobile) based. The API can be implemented in C# (Windows) or Javascript (Web). This API could be used to integrate real-time data of each worker's heart rate and other vitals data on the web dashboard.</p>
+
+                    	<h3><a href="https://developers.google.com/identity/">Google Identity Platform</a></h3>
 	                    <p>Google Identity Platform is a set of identity tools from Google to quickly build an auth system. It contains the following tools that we can possibly use:</p>
 	                    <ul class="center list-fix-align">
                     		<li>Google Sign-In, enabling users to sign in to the app using their Google account. (Android/iOS/Web)</li>
@@ -255,7 +278,7 @@
                     		<li>Identity Toolkit, a toolkit that provides password authentication and federated sign-in with major identity providers such as Google, Facebook, and more. (Android/iOS/Web)</li>
                     		<li>OpenID Connect, An OAuth 2.0-based protocol to build our own sign-in solutions.</li>
                     	</ul>
-	                    <p>We will look into using one or more Google Identity Platform tool to build an online auth system for our app. We will also look for other possible alternatives.</p>
+	                    <p>These tools could be used to build an online authentication system to implement user accounts.</p>
                     </div><!--/.row-->
                     
                     <div class="row padtop-slight">
@@ -267,32 +290,49 @@
                         <div class="col-xs-12 col-md-6">
                             <h2>Microsoft Band:</h2>
                             <ul class="center list-fix-align">
-                                <li> <a href="https://developer.microsoftband.com/">Band developer Page</a> </li>
+                                <li> <a href="http://www.microsoft.com/microsoft-band/en-gb/developer">Microsoft Band developer page</a> </li>
+                                <li> <a href="https://developer.microsoftband.com/">Microsoft Health developer page</a> </li>
                                 <li>  <a href="http://developer.microsoftband.com/bandSDK">Band SDK</a> </li>
                                 <li> <a href="http://developer.microsoftband.com/Content/docs/Microsoft%20Band%20SDK.pdf">Band SDK documentation</a> </li>
-                                <li> <a href="http://www.microsoft.com/microsoft-band/en-gb/developer">Band SDK documentation</a> </li>
+                                <li> <a href="https://www.nuget.org/packages/Microsoft.Band/">NuGet Band SDK Page</a> </li>
                                 <li> <a href="https://developer.microsoftband.com/WebTilehttp://blogs.msdn.com/b/visualstudio/archive/2015/07/15/microsoft-band-and-health-developer-platform.aspx"> Microsoft blog post about the Band and developers</a> </li>
                                 <li> <a href="https://www.microsoft.com/microsoft-band/en-gb"> Microsoft Band main page (features etc)</a> </li>
                                 <li> <a href="https://www.uuidgenerator.net/">UUID Generator</a> </li>
                             </ul>
                         </div>
-                        
+
                         <div class="col-xs-12 col-md-6">
-                            <h2>iOS/Android/Windows Phone:</h2>
+                            <h2>Windows Phone:</h2>
+                            <ul class="center list-fix-align">
+                                <li><a href="https://dev.windows.com/en-us">Windows Dev Center</a></li>
+                                <li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/mt299041.aspx">Windows 8.x Development Docs</a> </li>
+                                <li><a href="https://www.visualstudio.com/">Visual Studio</a></li>
+                                <li><a href="https://e5.onthehub.com/WebStore/OfferingDetails.aspx?o=42272789-ac94-e511-9412-b8ca3a5db7a1&pmv=00000000-0000-0000-0000-000000000000&ws=be86436a-b78b-e011-969d-0030487d8897&vsro=8" >Visual Studio Enterprise (DreamSpark)</a></li>
+                                <li><a href="https://www.jetbrains.com/resharper/">ReSharper</a></li>
+                                <li><a href="https://www.nuget.org/">NuGet Package Manager</a></li>
+                                <li><a href="https://www.nuget.org/packages/Newtonsoft.Json/">Json.NET</a></li>
+                                <li><a href="https://www.nuget.org/packages/Microsoft.Net.Http/">Microsoft HTTP Client Libraries</a></li>
+                                <li><a href="https://msdn.microsoft.com/en-us/library/67ef8sbd(v=vs.140).aspx">C# Guide</a></li>
+                            </ul>
+                        </div>
+
+                    </div><!--/.row-->
+                    <div class="row">
+
+                        <div class="col-xs-12 col-md-6">
+                            <h2>iOS/Android:</h2>
                             <ul class="center list-fix-align">
                                 <li><a href="http://developer.android.com/index.html">Android Developer page</a></li>
                                 <li><a href="http://developer.android.com/sdk/index.html">Android SDK/Android Studio download page</a></li>
                                 <li><a href="http://developer.android.com/reference/packages.html">Android SDK documentation</a></li>
                                 <li><a href="http://developer.android.com/guide/index.html">Android API Guide</a></li>
+                                <li><a href="https://docs.oracle.com/javase/tutorial/">Java Guide</a></li>
                                 <li><a href="https://developer.apple.com/ios/">iOS Developer page</a></li>
                                 <li><a href="https://developer.apple.com/library/ios/navigation/">iOS Developer Library</a></li>
-                                <li><a href="https://dev.windows.com/en-us">Windows Dev Center</a></li>
+                                <li><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C Guide</a></li>
+                                <li><a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/">Swift Guide</a></li>
                             </ul>
                         </div>
-
-                    </div><!--/.row-->
-
-                    <div class="row">
 
                     	<div class="col-xs-12 col-md-6">           
                             <h2>Xamarin:</h2>
@@ -306,6 +346,10 @@
                              </ul>
                         </div>
 
+
+                    </div><!--/.row-->
+                    <div class="row">
+
                         <div class="col-xs-12 col-md-6">  
                             <h2>PhoneGap/Cordova:</h2> 
                              <ul class="center list-fix-align">
@@ -317,33 +361,24 @@
                                 <li> <a href="https://github.com/dkundel/band-cordova">Band SDK for Cordova</a> </li>
                             </ul>
                         </div>
-                             
-                    </div><!--/.row-->
-
-                    <div class="row">
 
                         <div class="col-xs-12 col-md-6">
-                           <h2>Guides:</h2>
+                            <h2>Web Components:</h2>
                             <ul class="center list-fix-align">
-                                <li> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction ">JavaScript</a> </li>
-                                <li> <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd(v=vs.120).aspx">C#</a> </li>
-                                <li> <a href="https://docs.oracle.com/javase/tutorial/">Java</a></li>
-                                <li> <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6">
-                           <h2>Web Components:</h2>
-                            <ul class="center list-fix-align">
+                                <li> <a href="https://www.heroku.com/platform">Heroku Platform</a> </li>
+                                <li> <a href="https://devcenter.heroku.com/">Heroku Dev Center</a> </li>
+                                <li> <a href="https://nodejs.org/en/">Node.js</a> </li>
+                                <li> <a href="https://nodejs.org/api/">Node.js Documentation</a> </li>
+                                <li> <a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> </li>
                                 <li> <a href="https://developer.microsoftband.com/WebTile">Web Tiles</a> </li>
                                 <li> <a href="https://developer.microsoftband.com/Content/docs/Microsoft%20Band%20Web%20Tile%20Documentation.pdf">Web Tiles documentation</a> </li>
                                 <li> <a href="https://developer.microsoftband.com/cloudAPI">Microsoft Health Cloud API</a> </li>
                                 <li> <a href="https://developers.google.com/identity/">Google Identity Platform</a> </li>
+                                <li> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction ">JavaScript Guide</a> </li>
                             </ul>
                         </div>
 
                     </div><!--/.row-->
-
                 </div>
             </div>
         </div>

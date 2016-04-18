@@ -2742,6 +2742,10 @@ span.stButton_gradient,
   font-size: 125%;
 }
 
+.larger-slight {
+  font-size: 110%;
+}
+
 .vcenter {
   display: table-cell;
     vertical-align: middle;
