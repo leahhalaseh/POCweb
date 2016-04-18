@@ -2768,3 +2768,8 @@ td {
 .list-group-item {
   font-size: 120%;
 }
+
+.btn-repo {
+  margin-left: -2pc;
+  margin-bottom: 1pc;
+}
