@@ -22,6 +22,17 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <style> 
+p.test {
+
+     
+  text-align: center; 
+  position: relative;
+    
+    border: 1px;
+    word-wrap: break-word;
+}
+</style>
 </head><!--/head-->
 
 <body>
@@ -96,61 +107,28 @@
         <div class="container">
             <div class="row margin-bottom">
                 <div class="col-sm-12 text-center">
-                    <img src="images/aboutus/testing.jpg" class="margin-bottom" style="height:50%;width:50%;" alt="">
+                    <img src="images/aboutus/testing.jpg" class="margin-bottom" style="height:25%;width:25%;" alt="">
                     <h1 class="margin-bottom"><b>Testing Strategy</b></h1>
 
-                        <!--<img src="images/Background/TS.png" class="margin-bottom" style="height:100%;width:100%;" alt="">-->
+                    <h3 align = "justify"><p>
+                        This project is an ongoing project. It is not fully deployable yet and so testing across our target number of user testers which is as diverse as possible (hence testing on  large nuber of people with different backgrounds) hasn't occured yet. </p>
+                        <p>
+                            We have however tested it across a smaller number of users that quite relatively diverse, to be able to determine which features to keep and which to update or even remove completley and this is how it went:</p>
+                            <p align = "center">
+                                We placed the tester in an isolated location with no (or minimum) contact with the external world. The tester received a scenario to which he/she should act on, using the application. The scenario was :</p>
+                                  <div class="col-sm-12 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                                <p><i> <h2>You are working on a certain rail with no one in sight for the next 5 km. While trying to remove a faulty wire, you trip over and hit your head along the tracks. You assess your injury and determine that you are severely injured and incapable of moving. What do you do ?</h2> </i></p>
+</div>
+                                <p>
+                                    We observed how the user interacted with the application, and observed the natural behaviour and insticts of where they would press first and how they interpreted what button would do what. We observed the natural flow of their response which extremely aided in our design and how we managed the UX of our product.
 
-                        <table class="table table-bordered">
-                            <tbody>
-                                <tr bgcolor= "#ADD8E6">
-                                    <th>Category</th>
-                                    <th>Why</th>
-                                    <th>Who</th>
-                                    <th>What</th>
-                                    <th>When</th>
-                                    <th>Where</th>
-                                    <th>How</th>
-                                </tr>
-                                <tr>
-                                    <th bgcolor= "#ADD8E6">Unit Testing</th>
-                                    <td>To make sure code is written correctly</td>
-                                    <td>Developers</td>
-                                    <td>All code written</td>
-                                    <td>As soon as new code is written</td>
-                                    <td>Local Dev</td>
-                                    <td>Automated, JUnit, TestNG, PHPUnit</td>
-                                </tr>
-                                <tr>
-                                    <th bgcolor= "#ADD8E6">API/Service Testing</th>
-                                    <td>To ensure communication between components are working</td>
-                                    <td>Developers</td>
-                                    <td>New web sites, components, controllers, etc.</td>
-                                    <td>When new API is developed and ready</td>
-                                    <td>Local Dev</td>
-                                    <td>Automated, Soap UI, Rest Client</td>
-                                </tr>
-                                <tr>
-                                    <th bgcolor= "#ADD8E6">Acceptance Testing</th>
-                                    <td>To ensure customer's expectations are met</td>
-                                    <td>Developer/SDET/Manual QA</td>
-                                    <td>Verifying acceptance tests on the stories, verification of features</td>
-                                    <td>When the feature is ready and unit tested</td>
-                                    <td>CI/Test Environment</td>
-                                    <td>Automated (Cucumber)</td>
-                                </tr>
-                                <tr>
-                                    <th bgcolor= "#ADD8E6">System Testing / Regression Testing / UAT</th>
-                                    <td>To ensure the whole system works when integrated</td>
-                                    <td>SDET/Manual QA/Business Analyst/Product Owner</td>
-                                    <td>Scenario testing, user flows and typical user journeys, performance and security testing</td>
-                                    <td>When acceptance testing is completed</td>
-                                    <td>Staging Environment</td>
-                                    <td>Automated (Webdriver) exploratory testing</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    
+                                </p>
+                                <p>
+                                    For the future, we plan to carry out these types of test on a larger scale of wider backgrounds. We would also like to cary out different kinds of tests to determine different sections of the product. We will also implemetn automated testing of the code written, and for all codes (functionalities) that will be written. </p>
+
+
+
+                       
                 </div>
             </div>
         </div>
