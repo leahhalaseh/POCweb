@@ -2756,6 +2756,10 @@ span.stButton_gradient,
   padding-top: 1pc;
 }
 
+.padbot-slight{
+  padding-bottom: 1pc;
+}
+
 th {
   text-align: center;
   font-size: 130%;
