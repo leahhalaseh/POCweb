@@ -99,25 +99,27 @@
                     <img src="images/code.png" width="256" class="margin-bottom" alt="">
 
                     <h1>Architectural Diagram</h1>
-                    <h4>Below is a diagram that shows the components of the system and how they are connected with each other:</h4>
-                    <img src="images/diagram.png" alt="">
-                    <h4>Description of each component, along with their interactions with each other:</h4>
-                    <div class="list-fix-align padbot-slight">
-                        <ul>
-                            <li>Mobile application: The core of our system, the mobile application is divided into three pages:
-                                <ul>
-                                    <li>Dashboard: The main page of the app, this page shows the sensor data polled from the Microsoft Band when the user is working, and also allows the user to send this data to the server with the Check In and Panic buttons</li>
-                                    <li>Notifications: Displays previous messages received from the web dashboard via the server, and allows the user to reply by sending a text message to the server, which will be passed to the web dashboard</li>
-                                    <li>Profile: Shows the user's data such as the user's name, which can be edited. This user data is sent to the server when the user sends a message to the server.</li>
-                                </ul>
-                            </li>
-                            <li><br/></li>
-                            <li>Microsoft Band: The Microsoft Band is used to read the user's vitals data such as heart rate and skin temperature using its in-built sensors. The mobile application requests the sensor data every minute while the user is working.</li>
-                            <li><br/></li>
-                            <li>Web Server: Built using Node.js and Heroku, the server handles HTTP requests from the mobile app and the web dashboard, stores messages sent by the mobile app to be displayed by the web dashboard, and stores the last broadcasted message by the dashboard to be sent to active instances of the mobile application</li>
-                            <li><br/></li>
-                            <li>Web Dashboard: The dashboard, meant to be used by the Head Office, displays messages sent by the mobile application through the server, as well as allowing the Head Office to broadcast a message to every user (sent through the server).</li>
-                        </ul>
+                    <div class="row padbot-slight">
+                        <div class="col-md-6">
+                            <h4>Below is a diagram that shows the components of the system and how they are connected with each other:</h4>
+                            <img src="images/diagram.png" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Description of each component, along with interactions with each other:</h4>
+                            <ul class="list-fix-align">
+                                <li>Mobile application: The core of our system, the mobile application is divided into three pages:</li>
+                                <li class="nested-list">Dashboard: The main page of the app, this page shows the sensor data polled from the Microsoft Band when the user is working, and also allows the user to send this data to the server with the Check In and Panic buttons</li>
+                                <li class="nested-list">Notifications: Displays previous messages received from the web dashboard via the server, and allows the user to reply by sending a text message to the server, which will be passed to the web dashboard</li>
+                                <li class="nested-list">Profile: Shows the user's data such as the user's name, which can be edited. This user data is sent to the server when the user sends a message to the server.</li>
+
+                                <li><br/></li>
+                                <li>Microsoft Band: The Microsoft Band is used to read the user's vitals data such as heart rate and skin temperature using its in-built sensors. The mobile application requests the sensor data every minute while the user is working.</li>
+                                <li><br/></li>
+                                <li>Web Server: Built using Node.js and Heroku, the server handles HTTP requests from the mobile app and the web dashboard, stores messages sent by the mobile app to be displayed by the web dashboard, and stores the last broadcasted message by the dashboard to be sent to active instances of the mobile application</li>
+                                <li><br/></li>
+                                <li>Web Dashboard: The dashboard, meant to be used by the Head Office, displays messages sent by the mobile application through the server, as well as allowing the Head Office to broadcast a message to every user (sent through the server).</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <h1>Technical Achievements and Implementation Details</h1>
