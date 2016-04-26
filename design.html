@@ -122,7 +122,7 @@
                         </div>
                     </div>
 
-                    <h1>Technical Achievements and Implementation Details</h1>
+                    <h1 class="padbot-slight">Technical Achievements and Implementation Details</h1>
                     <h4>Over the course of our project, we have managed to achieve the following:</h4>
                     <div class="list-fix-align padbot-slight">
                         <ul>
@@ -141,8 +141,29 @@
                         </ul>
                     </div>
 
-                    <h1>Design Patterns</h1>
-                    <p>Pork chop duis eu pig, labore sausage venison. Shankle fugiat duis, filet mignon tri-tip venison beef shank ribeye<br /> aliqua cillum dolore sed do in.</p>
+                    <h4>To implement our system, we used the following services, packages, and extensions:</h4>
+                    <div class="list-fix-align padbot-slight">
+                        <ul>
+                            <li>Microsoft Band SDK - .NET package that we used for the mobile app to communicate with the band e.g. poll sensors, send notifications</li>
+                            <li>Json.NET - .NET package that we used to serialise C# objects to a JSON format to be saved and loaded locally as a string</li>
+                            <li>Microsoft HTTP Client Libraries - .NET package that we used to send HTTP requests to the server from the mobile app.</li>
+                            <li>Heroku - Web service that we used for our web server and web dashboard</li>
+                            <li>Node.js - Javascript runtime environment for server-side Web applications, used on the web server.</li>
+                            <li>Express - A Node.js extension used in the web dashboard and web server</li>
+                            <li>BodyParser - A Node.js extension used to read the body of incoming HTTP requests to the web server</li>
+                        </ul>
+                    </div>
+
+                    <h1 class="padbot-slight">Design Patterns</h1>
+                    <h4>Below are the design patterns that we used in our system:</h4>
+                    <div class="list-fix-align padbot-slight">
+                        <ul>
+                            <li>Singleton/State: We used the Singleton and State design pattern for the BandManager class, which handles communication between the mobile app with the Microsoft Band. When the app is initialised, the main page initialises a public, static instance of BandManager which is then accessed by other classes. This allows us to store the state of the connection in a single instance which can be read and written and changes are immediately visible by all accessors.</li>
+                            <li>Front Controller: Our system is built on a centralised web service that handles all requests, both coming from the mobile application and the web dashboard. This ensures that in the future, if additional apps are built on the system (for instance, an iOS or Android port of the mobile app), it all connects together to the same server and can be accessed through one web dashboard.</li>
+                            <li>Module: We grouped together similar methods with similar functions and dependencies into a container class as static methods. One such example is the HttpManager class that handles HTTP GET and POST requests from the mobile app to the web server.</li>
+                            <li>Task-based Asynchronous Pattern: We used asynchronous methods to have greater control over the sequence in which our app runs code and avoid unwanted interferences e.g. two different threads trying to poll sensors from the Microsoft Band at the same time. This design pattern is built in to C# using the async, await, and Task keywords.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
