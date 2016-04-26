@@ -98,16 +98,48 @@
                 <div class="col-sm-12 text-center">
                     <img src="images/code.png" width="256" class="margin-bottom" alt="">
 
-                    <h1 class="margin-bottom">Architectural Diagrams</h1>
-                    <p>Pork chop duis eu pig, labore sausage venison. Shankle fugiat duis, filet mignon tri-tip venison beef shank ribeye<br /> aliqua cillum dolore sed do in.</p>
+                    <h1>Architectural Diagram</h1>
+                    <h4>Below is a diagram that shows the components of the system and how they are connected with each other:</h4>
+                    <img src="images/diagram.png" alt="">
+                    <h4>Description of each component, along with their interactions with each other:</h4>
+                    <div class="list-fix-align padbot-slight">
+                        <ul>
+                            <li>Mobile application: The core of our system, the mobile application is divided into three pages:
+                                <ul>
+                                    <li>Dashboard: The main page of the app, this page shows the sensor data polled from the Microsoft Band when the user is working, and also allows the user to send this data to the server with the Check In and Panic buttons</li>
+                                    <li>Notifications: Displays previous messages received from the web dashboard via the server, and allows the user to reply by sending a text message to the server, which will be passed to the web dashboard</li>
+                                    <li>Profile: Shows the user's data such as the user's name, which can be edited. This user data is sent to the server when the user sends a message to the server.</li>
+                                </ul>
+                            </li>
+                            <li><br/></li>
+                            <li>Microsoft Band: The Microsoft Band is used to read the user's vitals data such as heart rate and skin temperature using its in-built sensors. The mobile application requests the sensor data every minute while the user is working.</li>
+                            <li><br/></li>
+                            <li>Web Server: Built using Node.js and Heroku, the server handles HTTP requests from the mobile app and the web dashboard, stores messages sent by the mobile app to be displayed by the web dashboard, and stores the last broadcasted message by the dashboard to be sent to active instances of the mobile application</li>
+                            <li><br/></li>
+                            <li>Web Dashboard: The dashboard, meant to be used by the Head Office, displays messages sent by the mobile application through the server, as well as allowing the Head Office to broadcast a message to every user (sent through the server).</li>
+                        </ul>
+                    </div>
 
-                    <h1 class="margin-bottom">Technical Achievements</h1>
-                    <p>Pork chop duis eu pig, labore sausage venison. Shankle fugiat duis, filet mignon tri-tip venison beef shank ribeye<br /> aliqua cillum dolore sed do in.</p>
+                    <h1>Technical Achievements and Implementation Details</h1>
+                    <h4>Over the course of our project, we have managed to achieve the following:</h4>
+                    <div class="list-fix-align padbot-slight">
+                        <ul>
+                            <li>Connect the mobile application with the Microsoft Band, using the Band SDK</li>
+                            <li>Poll sensor data from the Microsoft Band automatically every minute while the user is working</li>
+                            <li>Use the phone's built in timer to record time elapsed, as well as automate polling sensor data from the Band</li>
+                            <li>Determine the user's location, using the phone's built in GPS sensors</li>
+                            <li>Save the user's profile (name, e-mail, etc.) in the phone's local storage settings</li>
+                            <li>Send a HTTP POST request to the server, containing the sensor data, from the mobile app, to send a message to the web dashboard through the server</li>
+                            <li>Send a HTTP GET request automatically every minute, using the phone's built in timer, to check if there is any new notification from the web dashboard</li>
+                            <li>Receive and read the HTTP response for said request, and display the message from the web dashboard as a phone notification, and also send the notification to the Band which displays it as a Band notification</li>
+                            <li>Serialise and store the previously received notifications on the phone's local storage, and display a list of previously received messages on the mobile app, along with the ability to clear the previously stored notifications</li>
+                            <li>Create a working three-page navigation system on the mobile app</li>
+                            <li>Display a list of messages sent by the mobile app, sorted by time received by the server, on the web dashboard</li>
+                            <li>Allow the web dashboard to send a broadcast notification that is sent through the server to all active instances of the mobile application, which receives the notification using an automated HTTP GET request</li>
+                        </ul>
+                    </div>
 
-                    <h1 class="margin-bottom">Implementation Details</h1>
-                    <p>Pork chop duis eu pig, labore sausage venison. Shankle fugiat duis, filet mignon tri-tip venison beef shank ribeye<br /> aliqua cillum dolore sed do in.</p>
-
-                    <h1 class="margin-bottom">Design Patterns</h1>
+                    <h1>Design Patterns</h1>
                     <p>Pork chop duis eu pig, labore sausage venison. Shankle fugiat duis, filet mignon tri-tip venison beef shank ribeye<br /> aliqua cillum dolore sed do in.</p>
                 </div>
             </div>
