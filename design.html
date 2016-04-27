@@ -107,17 +107,17 @@
                         <div class="col-md-6">
                             <h4>Description of each component, along with interactions with each other:</h4>
                             <ul class="list-fix-align">
-                                <li>Mobile application: The core of our system, the mobile application is divided into three pages:</li>
-                                <li class="nested-list">Dashboard: The main page of the app, this page shows the sensor data polled from the Microsoft Band when the user is working, and also allows the user to send this data to the server with the Check In and Panic buttons</li>
-                                <li class="nested-list">Notifications: Displays previous messages received from the web dashboard via the server, and allows the user to reply by sending a text message to the server, which will be passed to the web dashboard</li>
-                                <li class="nested-list">Profile: Shows the user's data such as the user's name, which can be edited. This user data is sent to the server when the user sends a message to the server.</li>
+                                <li><strong>Mobile application:</strong> The core of our system, the mobile application is divided into three pages:</li>
+                                <li class="nested-list"><strong>Dashboard:</strong> The main page of the app, this page shows the sensor data polled from the Microsoft Band when the user is working, and also allows the user to send this data to the server with the Check In and Panic buttons</li>
+                                <li class="nested-list"><strong>Notifications:</strong> Displays previous messages received from the web dashboard via the server, and allows the user to reply by sending a text message to the server, which will be passed to the web dashboard</li>
+                                <li class="nested-list"><strong>Profile:</strong> Shows the user's data such as the user's name, which can be edited. This user data is sent to the server when the user sends a message to the server.</li>
 
                                 <li><br/></li>
-                                <li>Microsoft Band: The Microsoft Band is used to read the user's vitals data such as heart rate and skin temperature using its in-built sensors. The mobile application requests the sensor data every minute while the user is working.</li>
+                                <li><strong>Microsoft Band:</strong> The Microsoft Band is used to read the user's vitals data such as heart rate and skin temperature using its in-built sensors. The mobile application requests the sensor data every minute while the user is working.</li>
                                 <li><br/></li>
-                                <li>Web Server: Built using Node.js and Heroku, the server handles HTTP requests from the mobile app and the web dashboard, stores messages sent by the mobile app to be displayed by the web dashboard, and stores the last broadcasted message by the dashboard to be sent to active instances of the mobile application</li>
+                                <li><strong>Web Server:</strong> Built using Node.js and Heroku, the server handles HTTP requests from the mobile app and the web dashboard, stores messages sent by the mobile app to be displayed by the web dashboard, and stores the last broadcasted message by the dashboard to be sent to active instances of the mobile application</li>
                                 <li><br/></li>
-                                <li>Web Dashboard: The dashboard, meant to be used by the Head Office, displays messages sent by the mobile application through the server, as well as allowing the Head Office to broadcast a message to every user (sent through the server).</li>
+                                <li><strong>Web Dashboard:</strong> The dashboard, meant to be used by the Head Office, displays messages sent by the mobile application through the server, as well as allowing the Head Office to broadcast a message to every user (sent through the server).</li>
                             </ul>
                         </div>
                     </div>
@@ -144,13 +144,13 @@
                     <h4>To implement our system, we used the following services, packages, and extensions:</h4>
                     <div class="list-fix-align padbot-slight">
                         <ul>
-                            <li>Microsoft Band SDK - .NET package that we used for the mobile app to communicate with the band e.g. poll sensors, send notifications</li>
-                            <li>Json.NET - .NET package that we used to serialise C# objects to a JSON format to be saved and loaded locally as a string</li>
-                            <li>Microsoft HTTP Client Libraries - .NET package that we used to send HTTP requests to the server from the mobile app.</li>
-                            <li>Heroku - Web service that we used for our web server and web dashboard</li>
-                            <li>Node.js - Javascript runtime environment for server-side Web applications, used on the web server.</li>
-                            <li>Express - A Node.js extension used in the web dashboard and web server</li>
-                            <li>BodyParser - A Node.js extension used to read the body of incoming HTTP requests to the web server</li>
+                            <li><strong>Microsoft Band SDK</strong> - .NET package that we used for the mobile app to communicate with the band e.g. poll sensors, send notifications</li>
+                            <li><strong>Json.NET</strong> - .NET package that we used to serialise C# objects to a JSON format to be saved and loaded locally as a string</li>
+                            <li><strong>Microsoft HTTP Client Libraries</strong> - .NET package that we used to send HTTP requests to the server from the mobile app.</li>
+                            <li><strong>Heroku</strong> - Web service that we used for our web server and web dashboard</li>
+                            <li><strong>Node.js</strong> - Javascript runtime environment for server-side Web applications, used on the web server.</li>
+                            <li><strong>Express</strong> - A Node.js extension used in the web dashboard and web server</li>
+                            <li><strong>BodyParser</strong> - A Node.js extension used to read the body of incoming HTTP requests to the web server</li>
                         </ul>
                     </div>
 
@@ -158,10 +158,10 @@
                     <h4>Below are the design patterns that we used in our system:</h4>
                     <div class="list-fix-align padbot-slight">
                         <ul>
-                            <li>Singleton/State: We used the Singleton and State design pattern for the BandManager class, which handles communication between the mobile app with the Microsoft Band. When the app is initialised, the main page initialises a public, static instance of BandManager which is then accessed by other classes. This allows us to store the state of the connection in a single instance which can be read and written and changes are immediately visible by all accessors.</li>
-                            <li>Front Controller: Our system is built on a centralised web service that handles all requests, both coming from the mobile application and the web dashboard. This ensures that in the future, if additional apps are built on the system (for instance, an iOS or Android port of the mobile app), it all connects together to the same server and can be accessed through one web dashboard.</li>
-                            <li>Module: We grouped together similar methods with similar functions and dependencies into a container class as static methods. One such example is the HttpManager class that handles HTTP GET and POST requests from the mobile app to the web server.</li>
-                            <li>Task-based Asynchronous Pattern: We used asynchronous methods to have greater control over the sequence in which our app runs code and avoid unwanted interferences e.g. two different threads trying to poll sensors from the Microsoft Band at the same time. This design pattern is built in to C# using the async, await, and Task keywords.</li>
+                            <li><strong>Singleton and State:</strong> We used the Singleton and State design pattern for the BandManager class, which handles communication between the mobile app with the Microsoft Band. When the app is initialised, the main page initialises a public, static instance of BandManager which is then accessed by other classes. This allows us to store the state of the connection in a single instance which can be read and written and changes are immediately visible by all accessors.</li>
+                            <li><strong>Front Controller:</strong> Our system is built on a centralised web service that handles all requests, both coming from the mobile application and the web dashboard. This ensures that in the future, if additional apps are built on the system (for instance, an iOS or Android port of the mobile app), it all connects together to the same server and can be accessed through one web dashboard.</li>
+                            <li><strong>Module:</strong> We grouped together similar methods with similar functions and dependencies into a container class as static methods. One such example is the HttpManager class that handles HTTP GET and POST requests from the mobile app to the web server.</li>
+                            <li><strong>Task-based Asynchronous Pattern:</strong> We used asynchronous methods to have greater control over the sequence in which our app runs code and avoid unwanted interferences e.g. two different threads trying to poll sensors from the Microsoft Band at the same time. This design pattern is built in to C# using the async, await, and Task keywords.</li>
                         </ul>
                     </div>
                 </div>
